@@ -1,0 +1,115 @@
+#!/bin/sh
+
+# --------------------------------------------------------------------------- #
+#  Jesse's Bash Profile: the literal .bash_profile just references this file  #
+#
+#  Description:  This file holds all my BASH configurations and aliases
+#
+#  Sections:
+#  1.  Environment Configuration
+#  2.  Make Terminal Better
+#  3.  
+#  4.  
+#  5.  
+#  6.  
+#  7.  
+#  8.  
+#  9.  
+#
+#   -------------------------------------------------------------------------- #
+
+#   -------------------------------
+#   1. ENVIRONMENT CONFIGURATION
+#   -------------------------------
+
+#   Set Paths
+#   ------------------------------------------------------------
+    #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin
+
+
+#   Change Prompt
+#   --------------------------------------------------------------------------
+
+#   variable definitions - this will the prompt definition look a lot better
+    red=$(tput setaf 9);
+    orange=$(tput setaf 166);
+    yellow=$(tput setaf 228);
+    green=$(tput setaf 71);
+    white=$(tput setaf 15);
+    bold=$(tput bold);
+    reset=$(tput sgr0);
+
+#   \[ and \] are used to ensure where the cursor goes. It tells bash 
+#   PS1="\[${bold}\]" # this made the text bold. now that I'm using Fira code, it looks shitty. Commented out. 
+    PS1="\[${red}\]\u"; #user (\u) info customization - red
+    PS1+="\[${white}\] at "; #at
+    PS1+="\[${yellow}\h\]"; #hostname (\h) info customization - yellow
+    PS1+="\[${white}\] in "; #in
+    PS1+="\[${green}\]\w "; #directory (\w) info customization - green
+    PS1+="\[${white}\]"
+    PS1+="\n$"
+    PS1+="\[${reset}\]";
+    export PS1; 
+
+#   Set Default Editor (change 'Nano' to the editor of your choice)
+#   ------------------------------------------------------------
+    export EDITOR=/usr/bin/nano
+
+
+
+#   -----------------------------
+#   2. MAKE TERMINAL BETTER
+#   -----------------------------
+
+
+#   Aliases 
+#   ------------------------------------------------------------
+alias myip="curl ifconfig.co"               #print my ip address
+#alias python="/usr/local/bin/python3"       #lets me use python3 by default
+#alias python2="/usr/bin/python"             #if I really want python 2, I can call it explicitly
+alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                           # Go back 1 directory level
+alias ...='cd ../../'                       # Go back 2 directory levels
+alias .3='cd ../../../'                     # Go back 3 directory levels
+alias .4='cd ../../../../'                  # Go back 4 directory levels
+alias .5='cd ../../../../../'               # Go back 5 directory levels
+alias .6='cd ../../../../../../'            # Go back 6 directory levels
+alias edit='code'                           # edit:         Opens any file in sublime editor
+alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
+alias ~="cd ~"                              # ~:            Go Home
+alias c='clear'                             # c:            Clear terminal display
+
+
+# source .bashrc 
+
+
+
+
+
+# Useful Snippets 
+
+#   .bash_profile
+#   --------------------------------------------------------------------------------
+#       This is the contents of the LOCAL .bash_profile. Copy & paste it. 
+#       Then uncomment everything. Then re-comment where it says COMMENT.
+#   --------------------------------------------------------------------------------    
+# COMMENT    # Add Homebrew's executable directory to the front of the PATH
+#       export PATH=/usr/local/bin:$PATH
+#       echo 'Hello, Jesse. You are looking sexy as hell today.'
+# COMMENT    # if there's a bashrc file, then it'll run it here. #
+# COMMENT    #  That way we can do everything in the other file! #
+#       if [ -f ~/.bashrc ]; then
+#           source 	~/.bashrc
+#       fi  
+
+#   .bashrc
+#  --------------------------------------------------------------------------------
+#   This is the contents of LOCAL .bashrc in order to enable syncing with dropbox
+#   Copy & paste it. Then uncomment everything. Then re-comment where it says COMMENT.
+#  --------------------------------------------------------------------------------
+# COMMENT  #this links the machine's bashrc file with the bashrc file in dropbox
+#   dropbox_BSH="/Users/jessewiener/Dropbox/dev/.shared_bashrc"
+#   if [ -f $dropbox_BSH ];
+#   then
+#     source $dropbox_BSH
+#   fi
