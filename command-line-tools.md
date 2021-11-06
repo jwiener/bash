@@ -1,7 +1,9 @@
 #Command Line Tools
 
 ##Testing:
-1. cmus
+1. ranger
+2. midnight-commander
+3. jed
 
 
 ##To Try:
@@ -14,6 +16,7 @@
 7. lftp
 8. ack
 9. httping
+10. cmus
 
 
 ##Sources
